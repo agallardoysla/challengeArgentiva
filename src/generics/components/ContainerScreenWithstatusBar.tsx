@@ -30,7 +30,6 @@ function ContainerScreenWithstatusBar({children, hasHeader = true}: Props) {
       {hasHeader && (
         <Header
           actionLeft={navigation.goBack}
-          actionRight={() => console.log('close')}
           containerStyle={{backgroundColor: 'transparent'}}
         />
       )}

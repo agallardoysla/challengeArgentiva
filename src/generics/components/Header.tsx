@@ -9,34 +9,20 @@ import {
 } from 'react-native';
 import {backgrounds, fontFamily} from '../themes/themesConst';
 import {normalize} from '../hooks/useResponsive';
-import Iconos from './Iconos';
 import Entypo from 'react-native-vector-icons/Entypo';
 
 interface HeaderProps {
   title?: string;
   actionLeft: () => void;
   containerStyle?: StyleProp<ViewStyle>;
-  actionRight: () => void;
 }
-const Header = ({
-  actionLeft,
-  actionRight,
-  containerStyle,
-  title,
-}: HeaderProps) => {
+const Header = ({actionLeft, containerStyle, title}: HeaderProps) => {
   return (
     <View style={[styles.container, containerStyle]}>
       <TouchableOpacity onPress={actionLeft}>
         <Entypo name="chevron-thin-left" size={normalize(16)} />
       </TouchableOpacity>
       <Text style={styles.title}>{title}</Text>
-      <TouchableOpacity onPress={actionRight} style={styles.icon}>
-        <Iconos
-          name="Cerrar"
-          height={normalize(15.42)}
-          width={normalize(15.42)}
-        />
-      </TouchableOpacity>
     </View>
   );
 };

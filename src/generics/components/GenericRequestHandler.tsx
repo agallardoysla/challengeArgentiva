@@ -61,7 +61,6 @@ const GenericRequestHandlerHOC = ({children}: Props) => {
         setTitle,
       }}>
       {children}
-      <LoadingScreen isVisible={loading} />
       {!loading && (
         <AlertScreen
           title={title}
