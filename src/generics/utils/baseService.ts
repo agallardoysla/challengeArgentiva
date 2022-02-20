@@ -1,4 +1,4 @@
-const API_URL = 'https://staging.wynwood-house.com/api/';
+const API_URL = 'https://pokeapi.co/api/v2/';
 
 export enum HttpMethod {
   GET = 'GET',
@@ -39,12 +39,6 @@ export async function myFetch<T extends FetchResponse>(
       return response.json();
     })
     .then((data: T) => {
-      if (!data.status) {
-        let errorMessage = 'Unexpected error has ocurred';
-        errorMessage = data?.errors ? data.errors[0] : errorMessage;
-        errorHandler(errorMessage);
-        return;
-      }
       resultHandler(data);
     })
     .catch((error: Error) => errorHandler(error.message));
