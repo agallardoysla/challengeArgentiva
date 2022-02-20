@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './src/modules/home/HomeScreen';
+import PokemonDetailScreen from './src/modules/pokemonDetail/PokemonDetailScreen';
 import {SafeAreaView} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -25,6 +26,10 @@ const App = () => {
       <SafeAreaView style={{flex: 1}}>
         <Stack.Navigator screenOptions={{headerShown: false}}>
           <Stack.Screen name={SceneNames.HomeScreen} component={HomeScreen} />
+          <Stack.Screen
+            name={SceneNames.PokemonDetail}
+            component={PokemonDetailScreen}
+          />
         </Stack.Navigator>
       </SafeAreaView>
     </NavigationContainer>
